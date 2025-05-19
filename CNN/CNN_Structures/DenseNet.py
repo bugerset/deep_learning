@@ -99,18 +99,3 @@ class DenseNet121(nn.Module):
 
 # 모델 생성
 model = DenseNet121(growth_rate=32, num_blocks=[6, 12, 24, 16], num_classes=1000)
-
-"""
-단계	                 출력 채널 수	출력 크기
-입력 이미지	                    3     224x224
-Conv0	                    64	   112x112
-첫 번째 DenseBlock	         256     112x112
-Transition Layer 1	       128	   56x56
-두 번째 DenseBlock	         512     56x56
-Transition Layer 2	       256	   28x28
-세 번째 DenseBlock	        1024     28x28
-Transition Layer 3	       512	   14x14
-네 번째 DenseBlock	        1024     14x14
-Adaptive Average Pooling   1024	    1x1
-Fully Connected Layer	  	        클래스 수
-"""
